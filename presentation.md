@@ -926,9 +926,12 @@ system expands into normal Rust constructs.
 ### Let's write some macros
 
 ```rust [1-8|10-20]
+{% raw %}
 macro_rules! calculate {
     (eval $e:expr) => {{
         {
+            let val: f32 = $e; // Force types to be float
+            println!("{} = {}", stringify!($e), val);
         }
     }};
 }
@@ -947,6 +950,7 @@ fn main() {
     // So we have written eval expression in Rust macro_rules,
     // and it's compiled time checked!
 }
+{% endraw %}
 ```
 
 ===
