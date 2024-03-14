@@ -930,7 +930,6 @@ macro_rules! calculate {
     (eval $e:expr) => {{
         {
             let val: f32 = $e; // Force types to be float
-            //println!("{} = {}", stringify!($e), val);
         }
     }};
 }
