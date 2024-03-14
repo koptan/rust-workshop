@@ -929,7 +929,6 @@ system expands into normal Rust constructs.
 macro_rules! calculate {
     (eval $e:expr) => {{
         {
-            let val: f32 = $e; // Force types to be float
         }
     }};
 }
